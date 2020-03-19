@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'SCScanTools_Example' do
+  pod 'SCScanTools', :path => '../'
+
+  target 'SCScanTools_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
