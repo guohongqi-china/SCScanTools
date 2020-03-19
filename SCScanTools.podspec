@@ -21,17 +21,24 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/820003039@qq.com/SCScanTools'
+  s.homepage         = 'https://github.com/guohongqi-china/SCScanTools'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '820003039@qq.com' => 'guohongqi9010@zto.com' }
-  s.source           = { :git => 'https://github.com/820003039@qq.com/SCScanTools.git', :tag => s.version.to_s }
+  s.author           = { 'guohongqi-china' => '820003039@qq.com' }
+  s.source           = { :git => 'https://github.com/guohongqi-china/SCScanTools.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'SCScanTools/Classes/**/*'
+  s.public_header_files = "SCScanTools/Classes/SCScanHead.h"
+  s.source_files  = "SCScanTools/Classes/SCScanHead.h"
   
+  s.requires_arc = true
+  
+  s.subspec 'FrameWork' do |ss|
+    ss.source_files = 'SCScanTools/Classes/FrameWork/**/*.{h,m}'
+    ss.public_header_files = 'SCScanTools/Classes/FrameWork/**/*.{h}'
+  end
   # s.resource_bundles = {
   #   'SCScanTools' => ['SCScanTools/Assets/*.png']
   # }
